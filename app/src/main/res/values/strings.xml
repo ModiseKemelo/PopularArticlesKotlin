@@ -1,4 +1,11 @@
 <resources>
-    <string name="app_name">Ny Times Popular Articles</string>
-    <string name="title_item_detail">Item Detail</string>
+    <string name="app_name">NY-Times Popular Articles</string>
+    <string name="selected_item">Selected Article Period:</string>
+    <string name="spinner_txt">Select Article Period(days):</string>
+
+    <string-array name="periods">
+        <item>1</item>
+        <item>7</item>
+        <item>30</item>
+    </string-array>
 </resources>

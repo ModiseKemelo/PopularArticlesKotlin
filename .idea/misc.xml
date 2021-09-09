@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/NyTimesPopularArticles/app/src/main/res/layout/fragment_item_detail.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/drawable/orange_border.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/drawable/row_bg.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/layout/activity_recycler_view.xml" value="0.14375" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/layout/activity_second.xml" value="0.1234375" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/layout/articles_list_item.xml" value="0.2617753623188406" />
+        <entry key="..\:/Users/mkemelo/AndroidStudioProjects/TeraFlopspeedApps/KotlinFirst/app/src/main/res/layout/recyclerview_row.xml" value="0.1793478260869565" />
       </map>
     </option>
   </component>
