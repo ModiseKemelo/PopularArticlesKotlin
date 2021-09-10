@@ -7,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.mkemelo.kotlinpopulararticles.databinding.ActivityDetailBinding
 import android.content.Intent
 import android.net.Uri
-import android.webkit.WebViewClient
 import com.mkemelo.kotlinpopulararticles.R
 
 
@@ -19,7 +18,6 @@ class DetailView  : AppCompatActivity(), View.OnClickListener {
     var articleUrl = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        articleUrl = "www.google.com"
         binding = ActivityDetailBinding.inflate(layoutInflater)
         binding.btnReadMore.setOnClickListener(this)
 
