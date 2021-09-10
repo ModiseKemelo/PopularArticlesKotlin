@@ -37,11 +37,12 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
+        private var updated:  String = ""
         private var caption: String = ""
         private var bigImg: String = ""
+        private var link: String = ""
         val binding = ArticlesListItemBinding.bind(view)
         override fun onClick(p0: View?) {
-            Toast.makeText(itemView.context, binding.tvAbstract.text.toString(), Toast.LENGTH_LONG).show()
             val intent = Intent(itemView.context, DetailView::class.java).apply {
                 putExtra("articleAbstract", binding.tvAbstract.text)
                 putExtra("title", binding.tvTitle.text)
@@ -49,6 +50,8 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
                 putExtra("by", binding.tvByline.text)
                 putExtra("img", bigImg)
                 putExtra("caption", caption)
+                putExtra("link", link)
+                putExtra("update", updated)
                 //putExtra("url", )
 
 
@@ -72,6 +75,9 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
                 published.text = data.published_date
                 abstract.text = data.abstract
 
+
+                link = data.url
+                updated = data.updated
                 if (data?.media.isNotEmpty() && data?.media[0]?.metadata.isNotEmpty() && !TextUtils.isEmpty(data?.media[0]?.metadata[0].url)) {
                     val img = data?.media[0]?.metadata[0]?.url ?: "No image"
                     bigImg = data?.media[0]?.metadata[2]?.url ?: ""
@@ -84,7 +90,6 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
                         .into(imageThumb)
 
                 } else {
-                    println("**************** NOTHING TO PRINT HERE");
                     Glide.with(imageThumb)
                         .load(R.drawable.thumbnail)
                         .into(imageThumb)

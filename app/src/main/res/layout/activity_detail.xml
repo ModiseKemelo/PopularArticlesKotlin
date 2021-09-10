@@ -52,7 +52,7 @@
                 android:id="@+id/tvUpdated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
+                android:visibility="gone"
                 android:textColor="@color/subTitle"
                 android:textSize="12sp" />
 
@@ -60,7 +60,6 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
                 android:textColor="@color/titleTxt"
                 android:textSize="18sp" />
 
@@ -69,14 +68,27 @@
                 android:id="@+id/tvAbstract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvReadmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="read more ..."
+                android:textColorHint="@color/blue"
+                android:clickable="true"
+                android:textStyle="italic"
+                android:onClick="getUrlFromIntent"
+                android:textColor="@color/blue"
+                android:textSize="16sp" />
+
             <Button
                 android:id="@+id/btnReadMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 android:background="@color/blue"
                 android:text="Read More"/>
         </LinearLayout>
