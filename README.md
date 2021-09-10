@@ -11,13 +11,13 @@ An app to consume rest api from the new york times developer portal
 
 ### Installing
 
-* Download android studio (preferably the latest version)
+* Download android studio (preferably the latest version) https://developer.android.com/studio
 * Clone the project: git clone https://github.com/ModiseKemelo/PopularArticlesKotlin.git
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* git clone https://github.com/ModiseKemelo/PopularArticlesKotlin.git
+* Click on run icon on android studio
 ```
 code blocks for commands
 ```
@@ -29,11 +29,9 @@ Any advise for common problems or issues.
 command to run if program contains helper info
 ```
 
-## Authors
+## Author
 
-Contributors names and contact info
-
-ex. Modise Kemelo  
+Modise Kemelo  +26771400995
 
 ## Version History
 
