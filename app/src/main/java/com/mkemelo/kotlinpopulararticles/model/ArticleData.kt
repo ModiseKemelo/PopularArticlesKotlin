@@ -11,5 +11,6 @@ data class ArticleData(
     val published_date: String,
     val updated: String,
     val abstract: String,
+    val url: String,
     val media: List<Media>
 )

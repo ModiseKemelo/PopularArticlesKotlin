@@ -3,8 +3,8 @@ package com.mkemelo.kotlinpopulararticles.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mkemelo.kotlinpopulararticles.model.ArticlesListData
-import com.mkemelo.kotlinpopulararticles.network.RetroInstance
-import com.mkemelo.kotlinpopulararticles.network.RetroService
+import com.mkemelo.kotlinpopulararticles.network.RetrofitInstance
+import com.mkemelo.kotlinpopulararticles.network.RetrofitService
 import retrofit2.Call
 import retrofit2.Response
 
@@ -23,7 +23,7 @@ class MainActivityViewModel: ViewModel() {
     }
 
     fun fetchArticlesDataFromServer(numberOfDays: String) {
-        val retroInstance = RetroInstance.getRetroInstance().create(RetroService::class.java)
+        val retroInstance = RetrofitInstance.getRetroInstance().create(RetrofitService::class.java)
         val call = retroInstance.getArticlesDataViaAPI(numberOfDays)
         call.enqueue(object : retrofit2.Callback<ArticlesListData>{
             override fun onResponse(call: Call<ArticlesListData>, response: Response<ArticlesListData>) {
