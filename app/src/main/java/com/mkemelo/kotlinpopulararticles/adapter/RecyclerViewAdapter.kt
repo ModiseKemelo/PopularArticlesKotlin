@@ -37,11 +37,24 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
+        private var caption: String = ""
+        private var bigImg: String = ""
         val binding = ArticlesListItemBinding.bind(view)
         override fun onClick(p0: View?) {
-            Toast.makeText(itemView.context, "****** $p0", Toast.LENGTH_LONG).show()
-            val intent = Intent(itemView.context, DetailView::class.java)
-            intent.putExtra("articleAbstract", binding.tvAbstract.text)
+            Toast.makeText(itemView.context, binding.tvAbstract.text.toString(), Toast.LENGTH_LONG).show()
+            val intent = Intent(itemView.context, DetailView::class.java).apply {
+                putExtra("articleAbstract", binding.tvAbstract.text)
+                putExtra("title", binding.tvTitle.text)
+                putExtra("published", binding.tvPublished.text)
+                putExtra("by", binding.tvByline.text)
+                putExtra("img", bigImg)
+                putExtra("caption", caption)
+                //putExtra("url", )
+
+
+
+            }
+
             itemView.context.startActivity(intent)
         }
 
@@ -61,6 +74,8 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
 
                 if (data?.media.isNotEmpty() && data?.media[0]?.metadata.isNotEmpty() && !TextUtils.isEmpty(data?.media[0]?.metadata[0].url)) {
                     val img = data?.media[0]?.metadata[0]?.url ?: "No image"
+                    bigImg = data?.media[0]?.metadata[2]?.url ?: ""
+                    caption = data.media[0].caption ?: ""
                     Glide.with(imageThumb)
                         .load(img)
                         .placeholder(R.drawable.thumbnail)

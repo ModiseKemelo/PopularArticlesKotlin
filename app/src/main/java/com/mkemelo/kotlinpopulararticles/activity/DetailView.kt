@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.mkemelo.kotlinpopulararticles.databinding.ActivityDetailBinding
 import android.content.Intent
 import android.net.Uri
+import com.mkemelo.kotlinpopulararticles.R
 
 
 class DetailView  : AppCompatActivity(), View.OnClickListener {
@@ -16,19 +17,25 @@ class DetailView  : AppCompatActivity(), View.OnClickListener {
     var articleUrl = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         articleUrl = "www.google.com"
         binding = ActivityDetailBinding.inflate(layoutInflater)
         binding.btnReadMore.setOnClickListener(this)
+
         setContentView(binding.root)
-        val url = "https://static01.nyt.com/images/2021/09/05/multimedia/05XP-Lakeland-02/merlin_194254932_7db13d4e-85b5-4b55-91d5-35f3732760fa-mediumThreeByTwo440.jpg"
-        val imageThumb = binding.img
-        Glide.with(imageThumb)
+        val intent = getIntent()
+        binding.tvTitle.text  = intent.extras?.getString("title").toString()
+        binding.tvByline.text  = intent.extras?.getString("by").toString()
+        binding.tvPublished.text  = "Published: " +intent.extras?.getString("published").toString()
+        binding.tvAbstract.text  = intent.extras?.getString("articleAbstract").toString()
+        binding.tvCaption.text  = "Caption: " +intent.extras?.getString("caption").toString()
+        val url = intent.extras?.getString("img")
+
+            val imageThumb = binding.img
+        Glide.with(binding.img)
             .load(url)
-            /*.placeholder(R.drawable.thumbnail)
             .error(R.drawable.thumbnail)
-            .fallback(R.drawable.thumbnail)*/
-            .into(imageThumb)
+            .fallback(R.drawable.thumbnail)
+            .into(binding.img)
 
     }
 
