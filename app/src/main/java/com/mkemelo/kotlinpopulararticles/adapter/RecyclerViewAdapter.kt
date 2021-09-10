@@ -37,14 +37,15 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
+        val binding = ArticlesListItemBinding.bind(view)
         override fun onClick(p0: View?) {
             Toast.makeText(itemView.context, "****** $p0", Toast.LENGTH_LONG).show()
             val intent = Intent(itemView.context, DetailView::class.java)
-            intent.putExtra("desc", "Description -lnkkb")
+            intent.putExtra("articleAbstract", binding.tvAbstract.text)
             itemView.context.startActivity(intent)
         }
 
-        val binding = ArticlesListItemBinding.bind(view)
+
         fun bind(data: ArticleData) {
             // Set values displayed each card
             val tvTitle = binding.tvTitle

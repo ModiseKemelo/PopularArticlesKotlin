@@ -19,7 +19,6 @@ import com.mkemelo.kotlinpopulararticles.viewmodels.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adapter: RecyclerViewAdapter
     private lateinit var recyclerView: RecyclerView;
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter;
     private lateinit var binding: ActivityMainBinding
